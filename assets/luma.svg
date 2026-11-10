@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <!-- LUMA Canvas background (#F7F8F5) -->
+  <rect width="1200" height="600" fill="#F7F8F5" />
+
+  <!-- Subtle ambient decorative circles matching LUMA palette -->
+  <circle cx="150" cy="120" r="180" fill="#E5F1EB" opacity="0.45" />
+  <circle cx="1060" cy="480" r="200" fill="#F0ECF7" opacity="0.4" />
+
+  <!-- LUMA Brand Mark (brand-light emblem + LUMA wordmark + brand-dot) -->
+  <g transform="translate(0, -15)">
+    <!-- brand-light emblem -->
+    <g transform="translate(370, 300)">
+      <!-- Outer circle (#e1ede4) with border (#97b5a5) -->
+      <circle cx="0" cy="0" r="56" fill="#E1EDE4" stroke="#97B5A5" stroke-width="3" />
+      <!-- Inner light center (#256354) -->
+      <circle cx="0" cy="0" r="26" fill="#256354" />
+    </g>
+
+    <!-- LUMA text in deep pine (#182D29) with dot in primary (#256354) -->
+    <text x="455" y="322"
+          dominant-baseline="middle"
+          font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif"
+          font-size="140"
+          font-weight="700"
+          letter-spacing="10"
+          fill="#182D29">LUMA<tspan fill="#256354">.</tspan></text>
+  </g>
+
+  <!-- LUMA signature tag / pill using LUMA primary-soft (#E5F1EB) and primary (#256354) -->
+  <g transform="translate(600, 420)">
+    <rect x="-170" y="-24" width="340" height="48" rx="24" fill="#E5F1EB" stroke="#D9E2DC" stroke-width="1.5" />
+    <text x="0" y="2"
+          text-anchor="middle"
+          dominant-baseline="middle"
+          font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif"
+          font-size="20"
+          font-weight="600"
+          letter-spacing="3"
+          fill="#256354">REGISTRO EMOCIONAL</text>
+  </g>
+</svg>

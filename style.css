@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: clamp(80px, 12vh, 120px);
 }
 
 * {
@@ -23,6 +24,9 @@ body {
 }
 
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 10vh;
     background-color: transparent;
@@ -36,7 +40,6 @@ nav {
 
     padding: 0px 40px;
 
-    position: fixed;
     backdrop-filter: blur(12px);
     z-index: 2;
 }
@@ -100,7 +103,7 @@ main {
     max-width: 390px;
     justify-self: center;
 
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8qh6bj65apXQ5cNMTGlRUO4JgHCyR0zNNitLecRMgYkfrvbxMuD_rVvQ&s=10");
+    background-image: url("assets/profile.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -154,6 +157,40 @@ main {
     max-width: 650px;
 }
 
+.summary-contacts {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.contact-icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 225, 0.2);
+    backdrop-filter: blur(12px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.contact-icon-btn:hover {
+    transform: translateY(-3px);
+    background-color: rgba(56, 189, 248, 0.2);
+    border-color: rgba(56, 189, 248, 0.6);
+    color: #38bdf8;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.35);
+}
+
+.contact-icon-btn svg {
+    display: block;
+}
+
 .skills-container {
     margin: 80px auto;
     width: 80%;
@@ -184,14 +221,13 @@ main {
     backdrop-filter: blur(12px);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
     border-radius: 10px;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .skill-card:hover {
-    box-shadow: 0px 0px 15px 0px #00ffe1;
-    background-color: rgba(56, 189, 248, 0.25);
-    border-radius: 10px;
-    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0px 10px 25px rgba(56, 189, 248, 0.25);
+    border-color: rgba(56, 189, 248, 0.5);
+    transform: translateY(-6px);
 }
 
 .skill-image {
@@ -212,15 +248,17 @@ main {
 }
 
 .html-icon {
-    background-image: url("https://cdn-icons-png.flaticon.com/512/5968/5968267.png");
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg");
 }
 
 .css-icon {
-    background-image: url("https://cdn-icons-png.flaticon.com/512/5968/5968242.png");
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg");
 }
 
+.js-icon,
+.javascript-icon,
 .typeScript-icon {
-    background-image: url("https://cdn-icons-png.flaticon.com/512/5968/5968381.png");
+    background-image: url("https://cdn-icons-png.flaticon.com/512/5968/5968292.png");
 }
 
 .react-icon {
@@ -310,6 +348,7 @@ main {
     display: grid;
     place-items: center;
     overflow: hidden;
+    border-radius: 14px 14px 0 0;
 }
 
 .project-image {
@@ -318,23 +357,23 @@ main {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    transition: transform 0.4s ease;
 }
 
-.project-cards:hover .project-image {
-    transform: scale(1.05);
-}
-
+.luma,
 .music-player {
-    background-image: url("https://preview.redd.it/finally-i-can-enjoy-apple-music-on-my-work-pc-v0-ooxzrtxyfpud1.jpeg?auto=webp&s=f97313b82e0dfe097d134b93c51afae5a4883030");
+    background-image: url("assets/luma.svg");
+    background-color: #f7f8f5;
 }
 
 .nexus-med {
-    background-image: url("https://play-lh.googleusercontent.com/hJbc7aW7zMEA9h2oFjM6JStlSkwX6ZQ3dDwelNCxPmrftnMwRlVpCWcaDRiCSjsuJCIDQPlYTySoNKJ1PySWxw");
+    background-image: url("assets/nexusmed.svg");
+    background-color: #ffffff;
 }
 
+.edux,
 .paradox {
-    background-image: url("https://www.legalpracticeintelligence.com/cdn/shop/articles/77fd7296980ed46941d9903d19b7cc69.jpg?v=1713570854");
+    background-image: url("assets/edux.jpg");
+    background-color: #0c1b33;
 }
 
 .project-content {
@@ -533,12 +572,13 @@ main {
     background-origin: content-box;
     padding: 16px;
     border: 1px solid rgba(0, 255, 225, 0.15);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .certification-cards:hover {
-    transition: all 0.4s ease;
-    box-shadow: 0px 0px 10px 0px #00ffe1;
-    background-color: rgba(56, 189, 248, 0.35);
+    box-shadow: 0px 10px 25px rgba(56, 189, 248, 0.25);
+    border-color: rgba(56, 189, 248, 0.5);
+    transform: translateY(-6px);
 }
 
 .cisco-network-basics {
